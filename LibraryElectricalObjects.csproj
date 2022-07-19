@@ -45,6 +45,7 @@
     <Compile Include="OverHeadPowerLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transformator.cs" />
+    <Compile Include="TransformatorSplitWinding.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
