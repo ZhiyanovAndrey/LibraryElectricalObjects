@@ -37,7 +37,14 @@ namespace LibraryElectricalObjects
         public double Pxx { get; set; }
 
 
-
+        /// <summary>
+        /// Присвоить значения из паспортных данных трансформатора: Напряжение в кВ, Мощность в кВт, Uкз в %, Pкз и хх в Вт
+        /// </summary>
+        /// <param name="U">Напряжение в кВ</param>
+        /// <param name="S">Мощность в кВт</param>
+        /// <param name="Uкз"></param>
+        /// <param name="Pкз"></param>
+        /// <param name="Pxx"></param>
         public TransformatorSplitWinding(int U, int S, double Uкз, int Pкз, int Pxx)
         {
             Unom = U;

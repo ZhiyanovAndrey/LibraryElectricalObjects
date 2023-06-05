@@ -38,8 +38,15 @@ namespace LibraryElectricalObjects
         public double Pxx { get; set; }
 
 
-
-        public Transformator(int U, int S, double Uкз, int Pкз, int Pxx)
+        /// <summary>
+        /// Присвоить значения из паспортных данных трансформатора: Напряжение в кВ, Мощность в кВт, Uкз в %, Pкз и хх в Вт 
+        /// </summary>
+        /// <param name="U">Напряжение в кВ</param>
+        /// <param name="S">Мощность в кВт</param>
+        /// <param name="Uкз"></param>
+        /// <param name="Pкз"></param>
+        /// <param name="Pxx"></param>
+        public Transformator(double U, int S, double Uкз, int Pкз, int Pxx)
         {
             Unom = U;
             Snom = S;
@@ -65,13 +72,14 @@ namespace LibraryElectricalObjects
 
         //перегруженный метод создает массив точек для построения графика нагрузочных потерь трансформатора
 
-        
+
+
         /// <summary>
-        /// возвращает массив значений для переменной мощности осьХ
+        /// Присвойть значения: step в киловольтах, length - суммарная мощность трансформаторов 
         /// </summary>
-        /// <param name="step" шаг в киловольтах ></param>
-        /// <param name="length"></param>
-    
+        /// <param name="step">шаг в киловольтах</param>
+        /// <param name="length">суммарная мощность трансформаторов</param>
+        /// <returns>массив значений для переменной мощности осьХ</returns>
         public static double[] LoadLossesTrans(int step, double length)
         {
 
@@ -127,15 +135,7 @@ namespace LibraryElectricalObjects
             return ArrTwoTrans;
 
         }
-        //метод для нахождения точки пересечения двух графиков
 
-        //public double CrossLine(int step, Transformator one, Transformator two)
-        //{
-        //    double[] arr1 = Transformator.LoadLossesTrans(step, one);
-        //    double[] arr2 = Transformator.LoadLossesTrans(step, two);
-
-        //    return a;
-        //}
     }
 }
 

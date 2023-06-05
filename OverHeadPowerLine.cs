@@ -16,7 +16,12 @@ namespace LibraryElectricalObjects
 
 
 
-
+        /// <summary>
+        /// Присвоить значения из справочника для воздушной или кабельной линии: Сопротивление постоянному току, Индуктивное сопротивление прямой последовательности, Длина линии.
+        /// </summary>
+        /// <param name="resistivity">Сопротивление постоянному току</param>
+        /// <param name="reactivity">Индуктивное сопротивление прямой последовательности</param>
+        /// <param name="length">длина линии</param> 
         public OverHeadPowerLine(double resistivity, double reactivity, double length)
         {
             this.resistivity = resistivity;
@@ -43,7 +48,16 @@ namespace LibraryElectricalObjects
             return base.Impedance();
         }
 
-
+        /// <summary>
+        /// Возвращает сопротивление системы из указанных напряжения и мощности системы
+        /// </summary>
+        /// <param name="U">напряжение в кВ</param>
+        /// <param name="Ssys">мощность в МВА</param>
+        /// <returns></returns>
+        public static double SystemRessistance(double U, double Ssys)
+        {
+            return U / Math.Sqrt(3) * Ssys;
+        }
 
 
     }
